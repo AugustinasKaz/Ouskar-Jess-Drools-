@@ -1,0 +1,17 @@
+(MAIN::node (name root) (type decision) (question "Is the animal warm-blooded?") (yes-node node1) (no-node node2) (answer nil))
+
+
+(MAIN::node (name root) (type decision) (question "Is the animal warm-blooded?") (yes-node node1) (no-node node2) (answer nil))
+(MAIN::node (name node1) (type decision) (question "Does the animal purr?") (yes-node node3) (no-node node4) (answer nil))
+(MAIN::node (name node3) (type decision) (question "") (yes-node gen2) (no-node gen3) (answer cat))
+(MAIN::node (name gen2) (type answer) (question nil) (yes-node nil) (no-node nil) (answer monkey))
+(MAIN::node (name gen3) (type answer) (question nil) (yes-node nil) (no-node nil) (answer cat))
+(MAIN::node (name node4) (type decision) (question "Does it swing from trees?") (yes-node gen4) (no-node gen5) (answer dog))
+(MAIN::node (name gen4) (type answer) (question nil) (yes-node nil) (no-node nil) (answer monkey))
+(MAIN::node (name gen5) (type decision) (question "Does it live in a Habitrail?") (yes-node gen6) (no-node gen7) (answer dog))
+(MAIN::node (name gen6) (type answer) (question nil) (yes-node nil) (no-node nil) (answer hamster))
+(MAIN::node (name gen7) (type answer) (question nil) (yes-node nil) (no-node nil) (answer dog))
+(MAIN::node (name node2) (type decision) (question "Does it eat people?") (yes-node gen14) (no-node gen15) (answer snake))
+(MAIN::node (name gen14) (type answer) (question nil) (yes-node nil) (no-node nil) (answer shark))
+(MAIN::node (name gen15) (type answer) (question nil) (yes-node nil) (no-node nil) (answer snake))
+(MAIN::next-gensym-idx "16")
