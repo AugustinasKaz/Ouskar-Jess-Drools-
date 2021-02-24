@@ -1,0 +1,19 @@
+(deffacts auto (auto-pav volkswagen) (auto-talpa 7 ir daugiau) (auto-kebulas facelift))
+(deffacts auto (auto-pav renault) (auto-talpa 2 ir maziau) (auto-kebulas plastikas))
+
+(reset)
+
+(defrule auto-identifikacija (auto-pav ?pav) (auto-talpa 7 ir daugiau) (auto-kebulas facelift) => (assert (automobilis ?pav Sharan II (facelift 2015) 2015 - 1.4 TSI)))
+
+(defrule auto-identifikacija (auto-pav ?pav) (auto-talpa 2 ir maziau) (auto-kebulas plastikas) => (assert (automobilis ?pav Clio I 1993 - 1.8 RSi)))
+
+(run)
+(facts)
+
+(assert (automobilis Volvo S40))
+(assert (vairuotojas Vykontas))
+
+(defrule ar-pataisoma ?kliento-automobilis <- (automobilis Volvo S40) (vairuotojas Vykontas) => (printout t "Vairuotojas sugadino automobili nepataisomai. Vykdoma automobilio likvidacija...") (retract ?kliento-automobilis))
+
+(run)
+(facts)
